@@ -1,0 +1,4 @@
+{
+  "github.copilot.chat.temporalContext.enabled": true,
+  "editor.experimentalEditContextEnabled": true
+}

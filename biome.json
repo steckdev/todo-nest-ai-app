@@ -1,0 +1,44 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"files": {
+		"ignoreUnknown": true,
+		"ignore": ["coverage/", "dist/", "node_modules/"]
+	},
+	"linter": {
+		"rules": {
+			"suspicious": {
+				"noDebugger": "error",
+				"noConsoleLog": "warn"
+			},
+			"style": {
+				"useImportType": "off",
+				"useConst": {
+					"level": "warn",
+					"fix": "safe"
+				},
+				"useTemplate": {
+					"level": "warn",
+					"fix": "safe"
+				},
+				"noShoutyConstants": "warn",
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"strictCase": false
+					}
+				}
+			},
+			"correctness": {
+				"noUnusedVariables": {
+					"level": "error",
+					"fix": "none"
+				}
+			}
+		}
+	},
+	"javascript": {
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		}
+	}
+}

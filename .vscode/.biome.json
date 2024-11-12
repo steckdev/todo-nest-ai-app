@@ -1,14 +1,11 @@
 {
-  "rules": {
-    "cspell": {
-      "enabled": true,
-      "config": "./cspell.json"
-    },
-    "typescript": {
-      "enabled": true
-    },
-    "prettier": {
-      "enabled": true
-    }
-  }
+	"rules": {
+		"cspell": {
+			"enabled": true,
+			"config": "./cspell.json"
+		},
+		"typescript": {
+			"enabled": true
+		}
+	}
 }

@@ -1,4 +1,41 @@
 {
-  "github.copilot.chat.temporalContext.enabled": true,
-  "editor.experimentalEditContextEnabled": true
+	"github.copilot.chat.temporalContext.enabled": true,
+	"editor.experimentalEditContextEnabled": true,
+	"editor.tabSize": 2,
+	"editor.insertSpaces": true,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"editor.formatOnSave": true,
+	"[javascript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[javascriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[jsonc]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"[typescriptreact]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	},
+	"editor.codeActionsOnSave": {
+		"source.addMissingImports": "explicit",
+		"source.organizeImports.biome": "explicit",
+		"quickfix.biome": "explicit"
+	},
+	"editor.renderLineHighlight": "line",
+	"cSpell.import": ["cspell.json"],
+	"javascript.preferences.importModuleSpecifier": "relative",
+	"typescript.preferences.importModuleSpecifier": "relative",
+	"github.copilot.chat.codeGeneration.instructions": [
+		{
+			"file": "code-style.md"
+		}
+	]
 }

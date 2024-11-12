@@ -2,21 +2,22 @@ import { Injectable } from "@nestjs/common";
 import OpenAI from "openai";
 import { ChatCompletionMessageParam } from "openai/resources";
 
-const TARGET_MODEL = process.env.OPENAI_MODEL;
 @Injectable()
 export class OpenAiProvider {
 	private openai: OpenAI;
+	private model: string;
 
 	constructor() {
 		const configuration = {
 			apiKey: process.env.OPENAI_API_KEY,
 		};
 		this.openai = new OpenAI(configuration);
+		this.model = process.env.OPENAI_MODEL;
 	}
 
 	async getResponse(prompt: string): Promise<string> {
 		const response = await this.openai.chat.completions.create({
-			model: TARGET_MODEL,
+			model: this.model,
 			messages: this.buildPromptMessages(prompt),
 		});
 

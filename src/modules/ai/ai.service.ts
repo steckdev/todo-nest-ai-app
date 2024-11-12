@@ -14,6 +14,7 @@ export class AiService {
 		return text
 			.split("\n")
 			.map((item) => item.trim()) // Remove leading/trailing whitespace from each line
+			.map((item) => item.replace("Response:", ""))
 			.map((item) => item.replace(/^\d+\.\s*/, "")) // Remove leading numbering with period and whitespace (e.g., "1. ")
 			.map((item) => item.replace(/\s{2,}/g, " ")) // Collapse multiple spaces into a single space
 			.map((item) => item.replace(/\.$/, "")) // Remove any trailing period

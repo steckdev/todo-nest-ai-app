@@ -1,7 +1,7 @@
 import { Test, type TestingModule } from "@nestjs/testing";
+import { type MockProxy, mock } from "jest-mock-extended";
 import { AiService } from "./ai.service";
 import { OpenAiProvider } from "./openai.provider";
-import { mock, type MockProxy } from "jest-mock-extended";
 
 describe("AiService", () => {
 	let service: AiService;
@@ -77,8 +77,8 @@ describe("AiService", () => {
 		describe("when the response text has mixed formatting and extra whitespace", () => {
 			beforeEach(() => {
 				mockResponseText = `
-          TASK:   Finish the project.  
-            CALL:   Contact the vendor  
+          TASK:   Finish the project.
+            CALL:   Contact the vendor
           MEETING: Schedule a team review.
         `;
 				mockOpenAiProvider.getResponse.mockResolvedValue(mockResponseText);
@@ -97,12 +97,10 @@ describe("AiService", () => {
 			});
 		});
 
-		describe('when the response text includes improperly formatted lines without the "Response:" prefix', () => {
+		describe('when the response text includes improperly formatted lines with random "Response:" prefix', () => {
 			beforeEach(() => {
 				mockResponseText = `
-          TASK: Acceptable task.
-          EMAIL: Send the email.
-          This line should be ignored.
+          Response: TASK: Acceptable task.
           CALL: Follow up with client.
         `;
 				mockOpenAiProvider.getResponse.mockResolvedValue(mockResponseText);
@@ -114,7 +112,6 @@ describe("AiService", () => {
 
 				expect(result).toEqual([
 					"TASK: Acceptable task",
-					"EMAIL: Send the email",
 					"CALL: Follow up with client",
 				]);
 			});

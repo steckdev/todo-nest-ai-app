@@ -1,9 +1,5 @@
 {
-  "version": "0.2",
-  "language": "en",
-  "words": [
-    "nestjs",
-    "openai",
-    "todos"
-  ]
+	"version": "0.2",
+	"language": "en",
+	"words": ["nestjs", "openai", "todos"]
 }

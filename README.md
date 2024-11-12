@@ -78,6 +78,14 @@ npm run format
 - **tsconfig-paths**: Use TypeScript's path mapping in Node.js.
 - **source-map-support**: Provides source map support for stack traces in Node.js.
 
+## Api Overview
+
+![Api Overview](./overview.png)
+
+## Frontend Integration
+
+This project is designed to work seamlessly with the frontend application available at [todo-react-ai-app](https://github.com/steckdev/todo-react-ai-app). The frontend provides a user-friendly interface for managing TODO items and interacting with the AI-generated tasks.
+
 ## Project Structure
 
 ```plaintext
